@@ -11,7 +11,6 @@ import Header from "components/Header"
 
 const CustomApp = ({Component, pageProps}) => {
     const {darkThemeEnabled} = useSelector(state => state)
-
     return (
         <CacheProvider value={cache}>
             <ThemeProvider theme={darkThemeEnabled ? darkTheme : lightTheme}>

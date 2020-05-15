@@ -43,6 +43,8 @@ Because of a lack of time I will only benchmark Emotion and Styled components.
 
 ## Benchmarks
 
+## Benchmarks
+
 ### Before styling
 
 **Bundle sizes**
@@ -154,7 +156,62 @@ Page                                                           Size     First Lo
 
 ### Styled components
 
-**//TODO**
+**Bundle sizes**
+
+```
+Page                                                           Size     First Load JS
+┌   /_app                                                      11.5 kB        84.1 kB
+├ ○ /404                                                       2.6 kB         86.7 kB
+├ λ /archive-blog                                              688 B          88.8 kB
+└ λ /single-blog                                               7.6 kB         95.7 kB
++ First Load JS shared by all                                  84.1 kB
+  ├ static/pages/_app.js                                       11.5 kB
+  ├ chunks/cacd2cf700197219f0316c514326954fe8dec5ea.f7d0f2.js  14.6 kB
+  ├ chunks/commons.93f217.js                                   10.7 kB
+  ├ chunks/framework.96c24f.js                                 40.3 kB
+  ├ runtime/main.2e0b09.js                                     6.29 kB
+  └ runtime/webpack.c21266.js                                  746 B
+```
+
+**Stats in Chrome (incognito)**
+
+- Archive blog
+	- TTFB: 3ms
+	- 18 requests
+	- 272 transferred
+	- 444kb resources
+	- finish: 108ms
+	- DOMContentLoaded: 27ms
+	- Load: 104ms
+- Single blog (/emotion)
+	- TTFB: 3ms
+	- 18 requests
+	- 398kb transferred
+	- 592kb resources
+	- finish: 135ms
+	- DOMContentLoaded: 25ms
+	- Load: 125ms
+
+**Lighthouse performance (mobile 3G)**
+
+- Archive blog
+	- First contentful paint: 2.8s
+ 	- First meaningful paint: 2.8s
+	- Speed index: 2.8s
+	- First CPU idle: 2.8s
+	- Time to interactive: 2.8s
+	- Max potential first input delay: 30ms
+- Single blog
+	- First contentful paint: 2.7s
+ 	- First meaningful paint: 2.7s
+	- Speed index: 2.7s
+	- First CPU idle: 2.7s
+	- Time to interactive: 2.7s
+	- Max potential first input delay: 50ms
+
+## Concluding
+
+Emotion has a smaller footprint than styled-components and the performance is pretty much identical. If I had more time I would also benchmark JSS, Fela and Styletron, but for now Emotion is my favorite.
 
 ## Sources
 
@@ -163,4 +220,3 @@ https://gist.github.com/troch/c27c6a8cc47b76755d848c6d1204fdaf#file-choosing-a-c
 
 > **List of all CSS in JS solutions (outdated)** </br>
 https://github.com/MicheleBertoli/css-in-js/blob/master/README.md
-

@@ -27,7 +27,8 @@ const HeaderThemeButton = styled.button(({theme}) => ({
     outline: 'none',
     boxShadow: 'none',
     backgroundColor: 'transparent',
-    color: theme.text
+    color: theme.text,
+    cursor: 'pointer'
 }))
 
 const Header = () => {
