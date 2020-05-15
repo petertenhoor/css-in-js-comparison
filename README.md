@@ -43,8 +43,6 @@ Because of a lack of time I will only benchmark Emotion and Styled components.
 
 ## Benchmarks
 
-## Benchmarks
-
 ### Before styling
 
 **Bundle sizes**
